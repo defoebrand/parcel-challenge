@@ -28,38 +28,37 @@ The challenge was to synchronize a JSON object from an external source on a nigh
 Enter filter parameters to find the parcel by name, address, or....
 Once your desired parcel is found, click the link to view more information.
 
-## Live Demo
-#### Deployed on: HEROKU
-Try it out [here](https://parcel-challenge.herokuapp.com)
-
-
 ## Getting Started Locally
 ### Prerequisities
 To get this project up and running locally, you must have the packages necessary to run Ruby on Rails already installed on your computer or be able to install them.
 
-**To get this project set up on your local machine, follow these simple steps:**
-
 **Step 1**<br>
-Navigate to the local folder where you want the repository to be cloned and run
+Navigate your terminal to the local folder where you want the repository to be cloned to and run
 `git clone https://github.com/defoebrand/parcel-challenge.git`.<br>
 
 **Step 2**<br>
-Then, run `cd parcel-challenge`.<br>
+Enter the project directory by running `cd parcel-challenge`.<br>
 
 **Step 3**<br>
-Next, run `rails db:setup`.<br>
+Prepare the project dependencies by running `bundle i`.<br>
 
 **Step 4**<br>
-After which, run `rails s` to begin the server.<br>
+Setup the database by running `rails db:setup` followed by `rails db:migrate`.<br>
 
 **Step 5**<br>
-Finally, navigate to `http://localhost:3000/` in a browser of your choice to see the application running.<br>
+Initialize scheduled tasks by running `whenever --update-crontab`.<br>
+
+**Step 6**<br>
+Start the Rails server by running `rails s`.<br>
+
+**Step 7**<br>
+Navigate to `http://localhost:3000/` in a browser of your choice to see the application running.<br>
 
 ### Testing
 This project uses RSpec for testing Rails features.
 > To run tests, open a terminal inside the project's root directory and enter `rspec`
 
-## Authors
+## Author
 
 👤 **Brandon Defoe**
 
