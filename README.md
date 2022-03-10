@@ -46,18 +46,21 @@ Enter the project directory by running `cd parcel-challenge`.<br>
 Prepare the project dependencies by running `bundle i`.<br>
 
 **Step 4**<br>
-Setup the database by running `rails db:setup` followed by `rails db:migrate`.<br>
+Initialize the database by duplicating the `database.example.yml` file, naming it `database.yml`, and adjusting it to your local settings.<br>
 
 **Step 5**<br>
-Initialize scheduled tasks by running `whenever -w --set environment=development`.<br>
+Setup the database by running `rails db:setup` followed by `rails db:migrate`.<br>
 
 **Step 6**<br>
-Pull initial Parcel Machine location data by running `rake import:locations`.<br>
+Initialize scheduled tasks by running `whenever -w --set environment=development`.<br>
 
 **Step 7**<br>
-Start the Rails server by running `rails s`.<br>
+Pull initial Parcel Machine location data by running `rake import:locations`.<br>
 
 **Step 8**<br>
+Start the Rails server by running `rails s`.<br>
+
+**Step 9**<br>
 Navigate to `http://localhost:3000/` in a browser of your choice to see the application running.<br>
 
 ### Testing
