@@ -14,19 +14,22 @@ The challenge was to synchronize a JSON object from an external source on a nigh
 -   Index view of all parcel machines
 -   Display view of individually selected parcel machine
 -   Option to export filtered data to excel format
+-   Option to export selected data to excel format
 
 ###### Coming Features
--   Button to refresh parcel machine data
+-   Button to pull new parcel machine data from location API
 
 ## Built With
--   Node.js / yarn
+-   Node.js / Yarn
 -   Ruby / Ruby on Rails
 -   JavaScript ES6 / HTML / SCSS
 -   Bootstrap
 
 ### To Use The App
-Enter filter parameters to find the parcel by name, address, or....
+Enter filter parameters to find the parcel by name or zip.
 Once your desired parcel is found, click the link to view more information.
+Click the reset button to clear search filters.
+Click the export button on any screen to save the displayed data to an excel sheet.
 
 ## Getting Started Locally
 ### Prerequisities
@@ -49,9 +52,12 @@ Setup the database by running `rails db:setup` followed by `rails db:migrate`.<b
 Initialize scheduled tasks by running `whenever -w --set environment=development`.<br>
 
 **Step 6**<br>
-Start the Rails server by running `rails s`.<br>
+Pull initial Parcel Machine location data by running `rake import:locations`.<br>
 
 **Step 7**<br>
+Start the Rails server by running `rails s`.<br>
+
+**Step 8**<br>
 Navigate to `http://localhost:3000/` in a browser of your choice to see the application running.<br>
 
 ### Testing

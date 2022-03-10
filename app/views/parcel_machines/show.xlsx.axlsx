@@ -18,7 +18,6 @@ wb.add_worksheet(name: 'Parcel Machines') do |sheet|
     machine.comment.each do |key, val|
       sheet.add_row [key, val]
     end
-    byebug
     sheet.add_row ['Modified', machine.modified]
   end
 end

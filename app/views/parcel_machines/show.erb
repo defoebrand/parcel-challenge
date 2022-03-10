@@ -1,6 +1,6 @@
 <h1>Parcel Machine Data Sheet</h1>
 
-<%= link_to 'Export', parcel_machine_path(@parcel_machine.first, format: 'xlsx') %>
+<%= render 'export_button', path: parcel_machine_path(@parcel_machine.first, format: 'xlsx') %>
 
 <table>
   <tr>
