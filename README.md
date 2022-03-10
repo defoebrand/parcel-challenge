@@ -46,7 +46,7 @@ Prepare the project dependencies by running `bundle i`.<br>
 Setup the database by running `rails db:setup` followed by `rails db:migrate`.<br>
 
 **Step 5**<br>
-Initialize scheduled tasks by running `whenever --update-crontab`.<br>
+Initialize scheduled tasks by running `whenever -w --set environment=development`.<br>
 
 **Step 6**<br>
 Start the Rails server by running `rails s`.<br>

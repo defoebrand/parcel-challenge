@@ -28,4 +28,40 @@ class ParcelMachine < ApplicationRecord
   def full_address
     "#{street_name} #{street_number}, #{city}, #{zip} #{region}, #{country}"
   end
+  
+  def self.import_record(data)
+    create!(
+      zip: data['ZIP'],
+      name: data['NAME'],
+      machine_type: data['TYPE'],
+      a_name: {
+        "0" => data['A0_NAME'], 
+        "1" => data['A1_NAME'], 
+        "2" => data['A2_NAME'], 
+        "3" => data['A3_NAME'], 
+        "4" => data['A4_NAME'], 
+        "5" => data['A5_NAME'], 
+        "6" => data['A6_NAME'], 
+        "7" => data['A7_NAME'], 
+        "8" => data['A8_NAME']
+      },
+      coordinates: {
+        "X" => data['X_COORDINATE'], 
+        "Y" => data['Y_COORDINATE']
+      },
+      service_hours: data['SERVICE_HOURS'],
+      temp_service_hours: data['TEMP_SERVICE_HOURS'],
+      temp_service_hours_until: data['TEMP_SERVICE_HOURS_UNTIL'],
+      temp_service_hours_2: data['TEMP_SERVICE_HOURS_2'],
+      temp_service_hours_2_until: data['TEMP_SERVICE_HOURS_2_UNTIL'],
+      comment: {
+        "lit" => data['comment_lit'], 
+        "eng" => data['comment_eng'], 
+        "lav" => data['comment_lav'], 
+        "est" => data['comment_est'], 
+        "rus" => data['comment_rus']
+      },
+      modified: data['MODIFIED']
+    )
+  end
 end
