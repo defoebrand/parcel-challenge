@@ -1,6 +1,10 @@
 class ParcelMachine < ApplicationRecord
   validates :zip, :name, presence: true
   
+  def self.ransackable_attributes(auth_object = nil)
+    ['zip', 'name', 'a_name']
+  end
+  
   def country
     a_name['0']
   end
