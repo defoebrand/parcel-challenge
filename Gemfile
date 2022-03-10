@@ -29,7 +29,13 @@ gem 'sprockets-rails', '2.3.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# Use this for setting up cron jobs
 gem 'whenever', require: false
+
+# Use these for exporting to xlsx
+gem 'rubyzip'
+gem 'caxlsx'
+gem 'caxlsx_rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
