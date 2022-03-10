@@ -17,14 +17,6 @@ RSpec.describe 'ParcelMachines' do
     end
   end
 
-  describe 'GET #export_all' do
-    it 'returns successful response' do
-      get export_all_path(format: 'xlsx')
-  
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe 'GET #export_single' do
     it 'returns successful response' do
       get export_single_path(machine, format: 'xlsx')
