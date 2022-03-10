@@ -1,0 +1,17 @@
+#parcel_machines {
+  #index {
+    @extend .flex-column;
+  }
+  
+  #show {
+    @extend .flex-column;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
