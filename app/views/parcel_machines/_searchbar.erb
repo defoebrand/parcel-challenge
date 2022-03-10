@@ -1,0 +1,15 @@
+<%= search_form_for @q, url: root_path, id: 'ransack-search' do |f| %>
+
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+  
+  <%= f.label :zip_cont %>
+  <%= f.search_field :zip_cont %>
+
+  <%= f.submit name: '' %>
+  
+  <button type='button' class='button-link'>
+    <%= link_to 'Reset', root_path(q: {'name_cont': '', 'zip_cont': ''}) %>
+  </button>
+
+<% end %>

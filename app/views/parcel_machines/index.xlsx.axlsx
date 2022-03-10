@@ -1,0 +1,9 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: 'Parcel Machines') do |sheet|
+  sheet.add_row %w(ID Name Zip Address)
+
+  @parcel_machines.each do |machine|
+    sheet.add_row [machine.id, machine.name, machine.zip, machine.full_address]
+  end
+end

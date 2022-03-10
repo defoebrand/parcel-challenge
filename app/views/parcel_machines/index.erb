@@ -1,0 +1,20 @@
+<%= render 'searchbar' %>
+
+<h1>Welcome to the Parcel Machine Finder</h1>
+
+<%= render 'export_button', path: root_path(format: 'xlsx', q: params[:q].to_json) %>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Zip</th>
+    <th>Address</th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render @parcel_machines %>
+  </tbody>
+</table>
+
+

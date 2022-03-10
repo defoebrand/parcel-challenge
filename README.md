@@ -14,52 +14,57 @@ The challenge was to synchronize a JSON object from an external source on a nigh
 -   Index view of all parcel machines
 -   Display view of individually selected parcel machine
 -   Option to export filtered data to excel format
+-   Option to export selected data to excel format
 
 ###### Coming Features
--   Button to refresh parcel machine data
+-   Button to pull new parcel machine data from location API
 
 ## Built With
--   Node.js / yarn
+-   Node.js / Yarn
 -   Ruby / Ruby on Rails
 -   JavaScript ES6 / HTML / SCSS
 -   Bootstrap
 
 ### To Use The App
-Enter filter parameters to find the parcel by name, address, or....
+Enter filter parameters to find the parcel by name or zip.
 Once your desired parcel is found, click the link to view more information.
-
-## Live Demo
-#### Deployed on: HEROKU
-Try it out [here](https://parcel-challenge.herokuapp.com)
-
+Click the reset button to clear search filters.
+Click the export button on any screen to save the displayed data to an excel sheet.
 
 ## Getting Started Locally
 ### Prerequisities
 To get this project up and running locally, you must have the packages necessary to run Ruby on Rails already installed on your computer or be able to install them.
 
-**To get this project set up on your local machine, follow these simple steps:**
-
 **Step 1**<br>
-Navigate to the local folder where you want the repository to be cloned and run
+Navigate your terminal to the local folder where you want the repository to be cloned to and run
 `git clone https://github.com/defoebrand/parcel-challenge.git`.<br>
 
 **Step 2**<br>
-Then, run `cd parcel-challenge`.<br>
+Enter the project directory by running `cd parcel-challenge`.<br>
 
 **Step 3**<br>
-Next, run `rails db:setup`.<br>
+Prepare the project dependencies by running `bundle i`.<br>
 
 **Step 4**<br>
-After which, run `rails s` to begin the server.<br>
+Setup the database by running `rails db:setup` followed by `rails db:migrate`.<br>
 
 **Step 5**<br>
-Finally, navigate to `http://localhost:3000/` in a browser of your choice to see the application running.<br>
+Initialize scheduled tasks by running `whenever -w --set environment=development`.<br>
+
+**Step 6**<br>
+Pull initial Parcel Machine location data by running `rake import:locations`.<br>
+
+**Step 7**<br>
+Start the Rails server by running `rails s`.<br>
+
+**Step 8**<br>
+Navigate to `http://localhost:3000/` in a browser of your choice to see the application running.<br>
 
 ### Testing
 This project uses RSpec for testing Rails features.
 > To run tests, open a terminal inside the project's root directory and enter `rspec`
 
-## Authors
+## Author
 
 👤 **Brandon Defoe**
 

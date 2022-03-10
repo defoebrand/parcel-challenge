@@ -1,0 +1,29 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#parcel_machines {
+  #index {
+    @extend .flex-column;
+    
+    #ransack-search {
+      margin-top: 15px;
+    }
+    
+    #reset-button {
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  
+  #show {
+    @extend .flex-column;
+  }
+}
+

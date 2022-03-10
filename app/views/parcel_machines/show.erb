@@ -1,0 +1,61 @@
+<h1>Parcel Machine Data Sheet</h1>
+
+<%= render 'export_button', path: parcel_machine_path(@parcel_machine.first, format: 'xlsx') %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= @parcel_machine.first.name %></td>
+  </tr>
+    <tr>
+      <th>Type</th>
+      <td><%= @parcel_machine.first.machine_type %></td>
+    </tr>
+  <tr>
+    <th>Address</th>
+    <td><%= @parcel_machine.first.full_address %></td>
+  </tr>
+  <tr>
+    <th>Coordinates</th>
+    <td>
+      X: <%= @parcel_machine.first.coordinates['X'] %>
+      <br>
+      Y: <%= @parcel_machine.first.coordinates['Y']  %>
+    </td>
+  </tr>
+  <tr>
+    <th>Service_hours</th>
+    <td><%= @parcel_machine.first.service_hours %></td>
+  </tr>
+  <tr>
+    <th>Temp_service_hours</th>
+    <td><%= @parcel_machine.first.temp_service_hours %></td>
+  </tr>
+  <tr>
+    <th>Temp_service_hours_until</th>
+    <td><%= @parcel_machine.first.temp_service_hours_until %></td>
+  </tr>
+  <tr>
+    <th>Temp_service_hours_2</th>
+    <td><%= @parcel_machine.first.temp_service_hours_2 %></td>
+  </tr>
+  <tr>
+    <th>Temp_service_hours_2_until</th>
+    <td><%= @parcel_machine.first.temp_service_hours_2_until %></td>
+  </tr>
+  <tr>
+    <th>Comments</th>
+    <% @parcel_machine.first.comment.each do |lang, comment| %>
+      <% next if comment.blank? %>
+      <td><%= lang %>: <%= comment %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <th>Modified</th>
+    <td><%= @parcel_machine.first.modified %></td>
+  </tr>
+</table>
+
+<%= link_to 'Home', root_path %>
+
+
