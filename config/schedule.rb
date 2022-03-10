@@ -8,5 +8,4 @@ end
 
 # every :day, at: '12am' do 
 #   rake 'import:locations'
-#   runner "AnotherModel.prune_old_records"
 # end

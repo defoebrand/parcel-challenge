@@ -3,7 +3,7 @@ class CreateParcelMachines < ActiveRecord::Migration[6.1]
     create_table :parcel_machines do |t|
       t.string :zip, null: false
       t.string :name, null: false
-      t.string :type
+      t.string :machine_type
       t.jsonb :a_name, default: { '0': '', '1': '', '2': '', '3': '', '4': '', '5': '', '6': '', '7': '', '8': '' }
       t.jsonb :coordinates, default: { 'X': '', 'Y': '' }
       t.string :service_hours

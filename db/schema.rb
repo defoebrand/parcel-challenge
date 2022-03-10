@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_224659) do
   create_table "parcel_machines", force: :cascade do |t|
     t.string "zip", null: false
     t.string "name", null: false
-    t.string "type"
+    t.string "machine_type"
     t.jsonb "a_name", default: {"0"=>"", "1"=>"", "2"=>"", "3"=>"", "4"=>"", "5"=>"", "6"=>"", "7"=>"", "8"=>""}
     t.jsonb "coordinates", default: {"X"=>"", "Y"=>""}
     t.string "service_hours"
