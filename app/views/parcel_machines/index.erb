@@ -1,6 +1,8 @@
-<h1>Welcome to the Parcel Machine</h1>
+<%= render 'searchbar' %>
 
-<%= link_to 'Export', export_all_path(format: 'xlsx') %>
+<h1>Welcome to the Parcel Machine Finder</h1>
+
+<%= link_to 'Export', root_path(format: 'xlsx', q: params[:q].to_json ) %>
 
 <table>
   <thead>
