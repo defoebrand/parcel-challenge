@@ -1,20 +1,23 @@
 wb = xlsx_package.workbook
 
 wb.add_worksheet(name: 'Parcel Machines') do |sheet|
-  @parcel_machines.each do |machine|
+  @parcel_machine.each do |machine|
     sheet.add_row ['ID', machine.id]
     sheet.add_row ['Name', machine.name]
-    sheet.add_row ['ZIP', machine.zip]
-    sheet.add_row ['Address', machine.full_address]
     sheet.add_row ['Type', machine.machine_type]
     sheet.add_row ['Address', machine.full_address]
-    sheet.add_row ['Coordinates', machine.coordinates]
+    sheet.add_row ['Coordinates']
+    sheet.add_row ['X', machine.coordinates['X']]
+    sheet.add_row ['Y', machine.coordinates['Y']]
     sheet.add_row ['Service Hours', machine.service_hours]
     sheet.add_row ['Temp Service Hours', machine.temp_service_hours]
     sheet.add_row ['Temp Service Hours Until', machine.temp_service_hours_until]
     sheet.add_row ['Temp Service Hours 2', machine.temp_service_hours_2]
     sheet.add_row ['Temp Service Hours 2 Until', machine.temp_service_hours_2_until]
-    sheet.add_row ['Comments', machine.comment]
+    sheet.add_row ['Comments']
+    machine.comment.each do |key, val|
+      sheet.add_row [key, val]
+    end
     sheet.add_row ['Modified', machine.modified]
   end
 end

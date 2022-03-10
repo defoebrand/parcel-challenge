@@ -2,7 +2,7 @@
 
 <h1>Welcome to the Parcel Machine Finder</h1>
 
-<%= link_to 'Export', root_path(format: 'xlsx', q: params[:q].to_json ) %>
+<%= render 'export_button', path: root_path(format: 'xlsx', q: params[:q].to_json) %>
 
 <table>
   <thead>
