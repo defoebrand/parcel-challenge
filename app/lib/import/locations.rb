@@ -12,8 +12,8 @@ module Import
         puts res.is_a?(Net::HTTPSuccess) ? 'Connection Successful' : 'Connection Failed'
 
         begin
-          JSON.parse(res.body).each do |parcel_data|
-            ParcelMachine.import_record(parcel_data)
+          JSON.parse(res.body).each do |machine_data|
+            ParcelMachine.import_record(machine_data)
           end
           puts 'Data Import Successfully Completed'
 

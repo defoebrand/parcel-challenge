@@ -30,11 +30,10 @@ class ParcelMachine < ApplicationRecord
   end
   
   def self.import_record(data)
-    create!(
-      zip: data['ZIP'],
-      name: data['NAME'],
-      machine_type: data['TYPE'],
-      a_name: {
+    find_or_create_by!(name: data['NAME']) do |machine|
+      machine.zip = data['ZIP'],
+      machine.machine_type = data['TYPE'],
+      machine.a_name = {
         "0" => data['A0_NAME'], 
         "1" => data['A1_NAME'], 
         "2" => data['A2_NAME'], 
@@ -45,23 +44,23 @@ class ParcelMachine < ApplicationRecord
         "7" => data['A7_NAME'], 
         "8" => data['A8_NAME']
       },
-      coordinates: {
+      machine.coordinates = {
         "X" => data['X_COORDINATE'], 
         "Y" => data['Y_COORDINATE']
       },
-      service_hours: data['SERVICE_HOURS'],
-      temp_service_hours: data['TEMP_SERVICE_HOURS'],
-      temp_service_hours_until: data['TEMP_SERVICE_HOURS_UNTIL'],
-      temp_service_hours_2: data['TEMP_SERVICE_HOURS_2'],
-      temp_service_hours_2_until: data['TEMP_SERVICE_HOURS_2_UNTIL'],
-      comment: {
+      machine.service_hours = data['SERVICE_HOURS'],
+      machine.temp_service_hours = data['TEMP_SERVICE_HOURS'],
+      machine.temp_service_hours_until = data['TEMP_SERVICE_HOURS_UNTIL'],
+      machine.temp_service_hours_2 = data['TEMP_SERVICE_HOURS_2'],
+      machine.temp_service_hours_2_until = data['TEMP_SERVICE_HOURS_2_UNTIL'],
+      machine.comment = {
         "lit" => data['comment_lit'], 
         "eng" => data['comment_eng'], 
         "lav" => data['comment_lav'], 
         "est" => data['comment_est'], 
         "rus" => data['comment_rus']
       },
-      modified: data['MODIFIED']
-    )
+      machine.modified = data['MODIFIED']
+    end
   end
 end
